@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const { MeaningCloud, MeaningCloudApiLangEnum } = require('./meaningcloudApi');
 
 //Main Variables
 
@@ -36,8 +37,8 @@ app.get('/test', function (req, res) {
 
 // POST Endpoints
 app.post('/analyze', (req, res) => {
-    //TODO: Add post functionality
-    console.log(`:: Analyze End point on server ::
-    Request Body = ${JSON.stringify(req.body)}`);
-    res.send({});
+    const api = new MeaningCloud(req.body.text, MeaningCloudApiLangEnum.English);
+    api.analyze().then((data) => {
+        res.send(data);
+    });
 });
