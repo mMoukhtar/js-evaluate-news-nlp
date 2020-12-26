@@ -19,9 +19,10 @@ function handleSubmit(event) {
     const formText = document.getElementById('name').value;
     console.log('::: Form Submitted :::');
 
-    Client.postData('/analyze', { text: formText }).then((data) => {
-        document.getElementById('results').innerHTML = data.sentence_list;
-    });
+    Client.postData();
+    // Client.postData('/analyze', { text: formText }).then((data) => {
+    //     document.getElementById('results').innerHTML = data.sentence_list;
+    // });
 }
 
 export { handleSubmit };

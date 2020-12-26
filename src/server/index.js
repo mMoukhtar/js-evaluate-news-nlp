@@ -1,9 +1,9 @@
 // Imports
-import mockAPIResponse from './mockAPI.js';
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import path from 'path';
+const mockAPIResponse = require('./mockAPI.js');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
 
 //Main Variables
 

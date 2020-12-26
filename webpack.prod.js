@@ -1,10 +1,10 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebPackPlugin from 'html-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: ['@babel/polyfill', './src/client/index.js'],
     mode: 'production',
     module: {
         rules: [
