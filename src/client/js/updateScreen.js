@@ -1,10 +1,10 @@
 function updateScreen(data) {
     //Check for successful status code
     if (data.status.code == 0) {
-        showHideFormResults(true);
-        addResult(data);
+        Client.showHideFormResults(true);
+        Client.addResult(data);
     } else {
-        showHideFormResults(false);
+        Client.showHideFormResults(false);
     }
     // document.getElementById('results').innerHTML = data.sentence_list;
 }
@@ -19,7 +19,7 @@ function showHideFormResults(show) {
 }
 
 function addResult(data) {
-    clearResult();
+    Client.clearResult();
     const { score_tag, agreement, subjectivity, confidence, irony } = data;
     const container = document.createDocumentFragment();
     const scoreTagP = document.createElement('p');
@@ -44,4 +44,4 @@ function clearResult() {
     const results = (document.querySelector('#results').innerHTML = '');
 }
 
-export { updateScreen };
+export { updateScreen, clearResult, addResult, showHideFormResults };
