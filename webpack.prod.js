@@ -2,10 +2,16 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: ['@babel/polyfill', './src/client/index.js'],
     mode: 'production',
+    optimization: {
+        minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    },
     module: {
         rules: [
             {
@@ -15,7 +21,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ['style-loader', 'css-loader', 'sass-loader'],
+                loader: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
         ],
     },
@@ -32,6 +38,9 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false,
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
         }),
     ],
     output: {

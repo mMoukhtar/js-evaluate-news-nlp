@@ -8,25 +8,36 @@
     <body>
         <header>
             <div class="logo">Logo</div>
-            <div class="nav">navigation</div>
+            <div>
+                <h1>Evaluate News NLP</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    |
+                    <li><a href="">Contact Us</a></li>
+                    |
+                    <li><a href="">Subscribe</a></li>
+                </ul>
+            </div>
         </header>
-
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="" placeholder="Name" />
+                    <input id="name" type="text" name="input" value="" onblur="" placeholder="text goes here..." />
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)" />
                 </form>
             </section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+            <section id="formResults">
+                    <strong>Form Results:</strong>
+                    <div id="results"></div>
+                </div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>© 2020 Udacity Front End Nano Degree</p>
         </footer>
     </body>
 </html>

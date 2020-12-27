@@ -10,3 +10,22 @@ input {
     line-height: 16px;
     margin: 10px 0;
 }
+
+#formResults {
+    display: none;
+
+    strong {
+        font: 1.1rem;
+    }
+
+    #results {
+        margin: 1rem;
+
+        P {
+            padding: 0.3rem;
+            font-size: 1.1rem;
+            font-weight: normal;
+            color: steelblue;
+        }
+    }
+}

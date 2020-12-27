@@ -1,0 +1,11 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    background-color: grey;
+    p {
+        font-size: 0.9rem;
+        color: white;
+    }
+}

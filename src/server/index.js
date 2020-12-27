@@ -17,9 +17,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static('dist'));
 
-//FIXME: Remove this __dirname log
-console.log(__dirname);
-
 //Spin Express Server
 const port = 8081;
 app.listen(port, function () {
