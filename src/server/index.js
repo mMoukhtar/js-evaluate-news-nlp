@@ -34,6 +34,7 @@ app.get('/test', function (req, res) {
 
 // POST Endpoints
 app.post('/analyze', (req, res) => {
+    console.log(req.body);
     const api = new MeaningCloud(req.body.text, MeaningCloudApiLangEnum.English);
     api.analyze().then((data) => {
         res.send(data);

@@ -34,6 +34,7 @@ class MeaningCloud {
         return `${this.baseUrl}?key=${process.env.meaningcloud_API_KEY}&of=json&txt=${this.text}&model=general&lang=en`;
     }
     async analyze() {
+        console.log(this.requestURL);
         let analyzeData = {};
         await axios
             .post(this.requestURL)
